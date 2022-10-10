@@ -7,7 +7,9 @@ class Cv extends Component{
     }
 
     render(){
-        const data = this.props.personal
+        const data = this.props.personal;
+        const work = this.props.work;
+
         return(
             <div className="sheet">
                 <div className="header">
@@ -24,10 +26,11 @@ class Cv extends Component{
                 <hr />
                 <div className="cv-body">
                     <div className="cv-desc">
-                        <p>excepteur et nostrud enim irure nostrud officia. Et deserunt et aliquip voluptate elit cupidatat. Adipisicing enim minim do anim eiusmod est. Irure laboris anim voluptate proident. Cillum reprehenderit est magna minim. Nostrud ex aute laborum ea irure amet ea ipsum ut non minim anim nisi.</p>
+                        <p>{data.desc}</p>
                     </div>
                     <div className="cv-works">
                         <h3>Work Experience</h3>
+                        <p>{work.company}</p>
                     </div>
 
                 </div>

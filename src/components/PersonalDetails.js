@@ -8,12 +8,12 @@ class PersonalDetails extends Component{
         super(props)
 
         this.state = {
-              name: '',
-              title: '',
-              email: '',
-              number: '',
-              place: '',
-              desc: ''
+              name: 'John Doeman',
+              title: 'Software Developer',
+              email: 'doeman@gmail.com',
+              number: '01234567890',
+              place: 'Bristol, UK',
+              desc: 'excepteur et nostrud enim irure nostrud officia. Et deserunt et aliquip voluptate elit cupidatat. Adipisicing enim minim do anim eiusmod est. Irure laboris anim voluptate proident. Cillum reprehenderit est magna minim. Nostrud ex aute laborum ea irure amet ea ipsum ut non minim anim nisi.'
           }
 
             
@@ -22,12 +22,12 @@ class PersonalDetails extends Component{
         }
 
         temp = {
-            name: '',
-            title: '',
-            email: '',
-            number: '',
-            place: '',
-            desc: ''
+            name: 'John Doeman',
+            title: 'Software Developer',
+            email: 'doeman@gmail.com',
+            number: '01234567890',
+            place: 'Bristol, UK',
+            desc: 'excepteur et nostrud enim irure nostrud officia. Et deserunt et aliquip voluptate elit cupidatat. Adipisicing enim minim do anim eiusmod est. Irure laboris anim voluptate proident. Cillum reprehenderit est magna minim. Nostrud ex aute laborum ea irure amet ea ipsum ut non minim anim nisi.'
             }
 
      handleChange(e){
@@ -55,7 +55,7 @@ class PersonalDetails extends Component{
                     <input type="email" placeholder="E-mail" id="email" value={details.email} onInput={this.handleChange} />
                     <input type="number" placeholder="number" id="number" value={details.number} onInput={this.handleChange} />
                     <input type="text" placeholder="Place" id="place" value={details.place} onInput={this.handleChange} />
-                    <input type="text" placeholder="Description" id="desc" value={details.desc} onInput={this.handleChange} />
+                    <textarea rows="6" cols="50" id="desc" value={details.desc} onInput={this.handleChange} />
 
                     </div>
             </div>

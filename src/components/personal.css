@@ -30,3 +30,8 @@ input{
     display: grid;
     grid-template-columns: 1fr;
 }
+
+.inputs > #desc{
+    resize: none;
+    height: auto;
+}
