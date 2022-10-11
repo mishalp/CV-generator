@@ -18,7 +18,7 @@ class App extends Component{
         place: 'Bristol, UK',
         desc: 'excepteur et nostrud enim irure nostrud officia. Et deserunt et aliquip voluptate elit cupidatat. Adipisicing enim minim do anim eiusmod est. Irure laboris anim voluptate proident. Cillum reprehenderit est magna minim. Nostrud ex aute laborum ea irure amet ea ipsum ut non minim anim nisi.'
       },
-      workExp: {},
+      workExp: [],
 
     }
 
@@ -51,13 +51,8 @@ class App extends Component{
     })
   }
 
-  getWork({company, position, startDate, endDate, desc}){
-    console.log();
-    this.work.company = company;
-    this.work.position = position;
-    this.work.startDate = startDate;
-    this.work.endDate = endDate;
-    this.work.desc = desc;
+  getWork(work){
+    this.work = work;
 
     this.setState({
       personalDetails: this.pd,

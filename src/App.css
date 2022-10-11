@@ -19,3 +19,7 @@
     border: 2px solid rgba(5, 25, 139, 0.532);
     border-radius: .5rem;
 }
+
+textarea{
+    padding: .3rem;
+}

@@ -30,7 +30,17 @@ class Cv extends Component{
                     </div>
                     <div className="cv-works">
                         <h3>Work Experience</h3>
-                        <p>{work.company}</p>
+                        {work.map((work, index)=>{
+                            return(
+                                <div className="work" key={index}>
+                                    <div className="work-head">
+                                        <h4>{work.position}</h4>
+                                        <p>{work.company} | {work.startDate}-{work.endDate}</p>
+                                    </div>
+                                    <p>{work.desc}</p>
+                                </div>
+                            )
+                        })}
                     </div>
 
                 </div>
