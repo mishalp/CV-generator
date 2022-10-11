@@ -4,31 +4,33 @@ import './personal.css'
 
 
 class PersonalDetails extends Component{
+
+    temp = {
+        name: 'Mohammed Mishal P',
+        title: 'Software Developer',
+        email: 'hehehe@gmail.com',
+        number: '01234567890',
+        place: 'Bristol, UK',
+        desc: 'excepteur et nostrud enim irure nostrud officia. Et deserunt et aliquip voluptate elit cupidatat. Adipisicing enim minim do anim eiusmod est. Irure laboris anim voluptate proident. Cillum reprehenderit est magna minim. Nostrud ex aute laborum ea irure amet ea ipsum ut non minim anim nisi.'
+        }
+
     constructor(props){
         super(props)
 
         this.state = {
-              name: 'John Doeman',
-              title: 'Software Developer',
-              email: 'doeman@gmail.com',
-              number: '01234567890',
-              place: 'Bristol, UK',
-              desc: 'excepteur et nostrud enim irure nostrud officia. Et deserunt et aliquip voluptate elit cupidatat. Adipisicing enim minim do anim eiusmod est. Irure laboris anim voluptate proident. Cillum reprehenderit est magna minim. Nostrud ex aute laborum ea irure amet ea ipsum ut non minim anim nisi.'
+              name: this.temp.name,
+              title: this.temp.title,
+              email: this.temp.email,
+              number: this.temp.number,
+              place: this.temp.place,
+              desc: this.temp.desc
           }
-
+        
+          this.props.push(this.temp)
             
 
           this.handleChange = this.handleChange.bind(this)
         }
-
-        temp = {
-            name: 'John Doeman',
-            title: 'Software Developer',
-            email: 'doeman@gmail.com',
-            number: '01234567890',
-            place: 'Bristol, UK',
-            desc: 'excepteur et nostrud enim irure nostrud officia. Et deserunt et aliquip voluptate elit cupidatat. Adipisicing enim minim do anim eiusmod est. Irure laboris anim voluptate proident. Cillum reprehenderit est magna minim. Nostrud ex aute laborum ea irure amet ea ipsum ut non minim anim nisi.'
-            }
 
      handleChange(e){
         this.temp[e.target.id] = e.target.value;

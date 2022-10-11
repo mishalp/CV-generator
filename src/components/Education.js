@@ -3,21 +3,19 @@ import { Component } from "react";
 import './workExp.css'
 
 
-class WorkExp extends Component{
+class Education extends Component{
     temp = [
         {
-            company: 'A Software Company',
-            position: 'Software Engineer',
-            startDate: '2018',
+            course: 'CS50: Introduction to Computer Science',
+            university: 'Harvard University',
+            startDate: '2020',
             endDate: 'Present',
-            desc: 'Ut fugiat minim qui voluptate culpa. Elit nostrud ex ad incididunt incididunt eiusmod. Officia cupidatat culpa commodo nisi nostrud.',
         },
         {
-            company: 'My First Company',
-            position: 'Graduate Engineer',
-            startDate: '2017',
-            endDate: '2018',
-            desc: 'Irure dolor incididunt sint et ullamco. Commodo laboris amet aliquip incididunt do ut est exercitation reprehenderit magna sit laboris est mollit.',
+            course: 'Fullstack JavaScript',
+            university: 'The Odin Project',
+            startDate: '2019',
+            endDate: 'Present',
         }
     ]
     constructor(props){
@@ -48,11 +46,10 @@ class WorkExp extends Component{
 
      add(){
         this.temp.push({
-            company: '',
-            position: '',
+            course: '',
+            university: '',
             startDate: '',
             endDate: '',
-            desc: '',
         })
         this.setState({
             data: this.temp
@@ -72,23 +69,22 @@ class WorkExp extends Component{
     render(){
         return(
             <div className="workExp">
-                <p>Work Experience</p>
+                <p>Education</p>
                         {this.state.data.map((data, index)=>{
                             return(
                                 <div className="inputs" key={index}>
-                            <input type="text" placeholder="Company" id="company" data-index={index} value={data.company} onInput={this.handleChange} />
-                                <input type="text" placeholder="Position" id="position" value={data.position} data-index={index}  onInput={this.handleChange} />
+                            <input type="text" placeholder="Course" id="course" data-index={index} value={data.course} onInput={this.handleChange} />
+                                <input type="text" placeholder="university" id="university" value={data.university} data-index={index}  onInput={this.handleChange} />
                                 <input type="text" placeholder="Start date" id="startDate" value={data.startDate} data-index={index} onInput={this.handleChange} />
                                 <input type="text" placeholder="End date" id="endDate" value={data.endDate} data-index={index} onInput={this.handleChange} />
-                                <textarea rows="5" cols="50" id="desc"  data-index={index} value={data.desc} onInput={this.handleChange} />
                                 <button onClick={this.del} id="remove-btn" data-index={index}>Remove</button>
                                 </div>
                             )
                         })}
-                        <button id="add-btn" onClick={this.add}>Add Experience</button>
+                        <button id="add-btn" onClick={this.add}>Add Education</button>
             </div>
         )
     }
 }
 
-export default WorkExp
+export default Education

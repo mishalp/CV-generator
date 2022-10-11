@@ -9,6 +9,7 @@ class Cv extends Component{
     render(){
         const data = this.props.personal;
         const work = this.props.work;
+        const education = this.props.education
 
         return(
             <div className="sheet">
@@ -38,6 +39,20 @@ class Cv extends Component{
                                         <p>{work.company} | {work.startDate}-{work.endDate}</p>
                                     </div>
                                     <p>{work.desc}</p>
+                                </div>
+                            )
+                        })}
+                    </div>
+
+                    <div className="cv-works">
+                        <h3>Education</h3>
+                        {education.map((data, index)=>{
+                            return(
+                                <div className="work" key={index}>
+                                    <div className="work-head">
+                                        <h4>{data.course}</h4>
+                                        <p>{data.university} | {data.startDate}-{data.endDate}</p>
+                                    </div>
                                 </div>
                             )
                         })}
