@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/CV-generator/static/css/main.f60c3a4e.css",
+    "main.js": "/CV-generator/static/js/main.ac8095d6.js",
+    "index.html": "/CV-generator/index.html",
+    "main.f60c3a4e.css.map": "/CV-generator/static/css/main.f60c3a4e.css.map",
+    "main.ac8095d6.js.map": "/CV-generator/static/js/main.ac8095d6.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f60c3a4e.css",
+    "static/js/main.ac8095d6.js"
+  ]
+}
