@@ -23,3 +23,117 @@
 textarea{
     padding: .3rem;
 }
+
+@media only screen and (min-width: 375px){
+
+    input, textarea, button{
+        min-width: 300px;
+    }
+
+    .App{
+        display: flex;
+        flex-direction: column;
+
+    }
+
+    h1{
+        font-size: 1rem;
+    }
+
+    p{
+        font-size: .7rem;
+    }
+
+    .personal, .workExp{
+        min-width: 325px;
+    }
+
+    .sheet{
+        padding: .5rem;
+    }
+
+    .cv-body{
+        margin: 1rem 0;
+        gap: 1rem;
+    }
+
+    h3{
+        font-size: 18px;
+    }
+
+    h4{
+        font-size: 12px;
+    }
+
+    .work-head{
+        gap: 8px;
+    }
+    
+}
+
+@media only screen and (min-width: 768px){
+    .App{
+        padding: 1rem 9rem;
+    }
+
+    h3{
+        font-size: 20px;
+    }
+
+    h4{
+        font-size: 15px;
+    }
+
+    p{
+        font-size: .9rem;
+    }
+}
+
+@media only screen and (min-width: 1024px){
+    h3{
+        font-size: 24px;
+    }
+
+    h4{
+        font-size: 19px;
+    }
+
+    p{
+        font-size: 1.2rem;
+    }
+
+    h1{
+        font-size: 2rem;
+    }
+
+    .sheet{
+        padding: 1.5rem;
+    }
+
+    input, textarea, button{
+        min-width: 500px;
+    }
+}
+
+@media only screen and (min-width: 1440px){
+    .App{
+        display: grid;
+        gap: 1rem;
+        grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+        justify-content: center;
+        padding: 1rem;
+    }
+    
+    .left{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        border: 2px solid rgba(5, 25, 139, 0.532);
+        border-radius: .5rem;
+    }
+    
+    textarea{
+        padding: .3rem;
+    }
+}

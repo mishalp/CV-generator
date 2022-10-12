@@ -15,9 +15,9 @@ const Cv =(props)=>{
                 <p>{data.title}</p>
             </div>
             <div className="cv-left">
-                <div>{data.number}</div>
-                <div>{data.email}</div>
-                <div>{data.place}</div>
+                <div><p>{data.number}</p></div>
+                <div><p>{data.email}</p></div>
+                <div><p>{data.place}</p></div>
             </div>
         </div>
         <hr />
