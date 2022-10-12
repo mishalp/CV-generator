@@ -1,90 +1,72 @@
-import React from "react";
-import { Component } from "react";
+import React, { useEffect, useState } from "react";
 import './workExp.css'
 
 
-class Education extends Component{
-    temp = [
-        {
-            course: 'CS50: Introduction to Computer Science',
-            university: 'Harvard University',
-            startDate: '2020',
-            endDate: 'Present',
-        },
-        {
-            course: 'Fullstack JavaScript',
-            university: 'The Odin Project',
-            startDate: '2019',
-            endDate: 'Present',
-        }
-    ]
-    constructor(props){
-        super(props)
+let temp = [
+    {
+        course: 'CS50: Introduction to Computer Science',
+        university: 'Harvard University',
+        startDate: '2020',
+        endDate: 'Present',
+    },
+    {
+        course: 'Fullstack JavaScript',
+        university: 'The Odin Project',
+        startDate: '2019',
+        endDate: 'Present',
+    }
+]
 
+const Education = (props)=>{
+    const [data, setData] = useState(temp)
 
-        this.state = {
-            data: this.temp,
-        }
+    useEffect(()=>{
+        props.push(temp)
+    }, [])
 
-        this.props.push(this.temp)
+    const handleChange = (e)=>{
+        var i = e.target.dataset.index
+        temp[i][e.target.id] = e.target.value
+        setData([...temp])
 
-        this.handleChange = this.handleChange.bind(this)
-        this.add = this.add.bind(this)
-        this.del = this.del.bind(this)
+        props.push(temp)
     }
 
-     handleChange(e){
-        var i = e.target.dataset.index
-        this.temp[i][e.target.id] = e.target.value
-        this.setState({
-            data: this.temp,
-        })
-        console.log(this.temp);
-
-        this.props.push(this.temp)
-     }
-
-     add(){
-        this.temp.push({
+    const add = ()=>{
+        temp.push({
             course: '',
             university: '',
             startDate: '',
             endDate: '',
         })
-        this.setState({
-            data: this.temp
-        })
-        this.props.push(this.temp)
-     }
-
-     del(e){
-        var i = e.target.dataset.index;
-        this.temp.splice(i, 1)
-        this.setState({
-            data: this.temp
-        })
-        this.props.push(this.temp)
-     }
-
-    render(){
-        return(
-            <div className="workExp">
-                <p>Education</p>
-                        {this.state.data.map((data, index)=>{
-                            return(
-                                <div className="inputs" key={index}>
-                            <input type="text" placeholder="Course" id="course" data-index={index} value={data.course} onInput={this.handleChange} />
-                                <input type="text" placeholder="university" id="university" value={data.university} data-index={index}  onInput={this.handleChange} />
-                                <input type="text" placeholder="Start date" id="startDate" value={data.startDate} data-index={index} onInput={this.handleChange} />
-                                <input type="text" placeholder="End date" id="endDate" value={data.endDate} data-index={index} onInput={this.handleChange} />
-                                <button onClick={this.del} id="remove-btn" data-index={index}>Remove</button>
-                                </div>
-                            )
-                        })}
-                        <button id="add-btn" onClick={this.add}>Add Education</button>
-            </div>
-        )
+        setData([...temp])
+        props.push(temp)
     }
+
+    const del = (e)=>{
+        var i = e.target.dataset.index;
+        temp.splice(i, 1)
+        setData([...temp])
+        props.push(temp)
+    }
+
+    return(
+        <div className="workExp">
+            <p>Education</p>
+                    {data.map((data, index)=>{
+                        return(
+                            <div className="inputs" key={index}>
+                            <input type="text" placeholder="Course" id="course" data-index={index} value={data.course} onInput={handleChange} />
+                            <input type="text" placeholder="university" id="university" value={data.university} data-index={index}  onInput={handleChange} />
+                            <input type="text" placeholder="Start date" id="startDate" value={data.startDate} data-index={index} onInput={handleChange} />
+                            <input type="text" placeholder="End date" id="endDate" value={data.endDate} data-index={index} onInput={handleChange} />
+                            <button onClick={del} id="remove-btn" data-index={index}>Remove</button>
+                            </div>
+                        )
+                    })}
+                    <button id="add-btn" onClick={add}>Add Education</button>
+        </div>
+    )
 }
 
 export default Education

@@ -1,4 +1,4 @@
-import { Component } from "react";
+import React, { useState } from "react";
 import PersonalDetails from "./components/PersonalDetails";
 import WorkExp from "./components/WorkExp";
 import Education from "./components/Education";
@@ -6,79 +6,37 @@ import Cv from "./components/cv";
 import './App.css'
 
 
-class App extends Component{
-  constructor(props){
-    super(props)
+const App = ()=>{
+  const [personalData, setPersonalData] = useState({});
+  const [workExp, setWorkExp] = useState([]);
+  const [edu, setEdu] = useState([])
 
-    this.state = {
-      personalDetails: {},
-      workExp: [],
-      education: [],
-
-    }
-
-    this.init()
-
-    this.getDetails = this.getDetails.bind(this)
-    this.getWork = this.getWork.bind(this)
-    this.getEd = this.getEd.bind(this)
+  const getDetails = (data)=>{
+    setPersonalData({...data})
   }
 
-  pd = {}
-  work = {}
-  education = {}
-
-  init(){
-    this.pd = this.state.personalDetails;
+  const getWork = (data)=>{
+    setWorkExp([...data])
   }
 
+  const getEd = (data)=>{
+    setEdu([...data])
 
-  getDetails(data){
-    this.pd = data
-
-    this.setState({
-      personalDetails: this.pd,
-      workExp: this.work,
-      education: this.education
-    })
   }
 
-  getWork(work){
-    this.work = work;
-
-    this.setState({
-      personalDetails: this.pd,
-      workExp: this.work,
-      education: this.education,
-    })
-  }
-
-  getEd(education){
-    this.education = education
-
-    this.setState({
-      personalDetails: this.pd,
-      workExp: this.work,
-      education: this.education,
-    })
-  }
-
-
-  render(){
-    return(
-      <div className="App">
-        <div className="left">
-        <PersonalDetails push={this.getDetails} />
-        <WorkExp push={this.getWork} />
-        <Education push={this.getEd} />
-        </div>
-        <div className="right">
-          <Cv personal={this.state.personalDetails} work={this.state.workExp} education={this.state.education} />
-        </div>
-
+  return(
+    <div className="App">
+      <div className="left">
+      <PersonalDetails push={getDetails} />
+      <WorkExp push={getWork} />
+      <Education push={getEd} />
       </div>
-    )
-  }
+      <div className="right">
+        <Cv personal={personalData} work={workExp} education={edu} />
+      </div>
+
+    </div>
+  )
 }
 
 export default App;
