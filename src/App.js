@@ -6,6 +6,14 @@ import Cv from "./components/cv";
 import './App.css'
 
 
+const Header =()=>{
+  return(
+    <div className="head">
+      <p>CV GENERATOR</p>
+    </div>
+  )
+}
+
 const App = ()=>{
   const [personalData, setPersonalData] = useState({});
   const [workExp, setWorkExp] = useState([]);
@@ -25,6 +33,8 @@ const App = ()=>{
   }
 
   return(
+    <div>
+      <Header />
     <div className="App">
       <div className="left">
       <PersonalDetails push={getDetails} />
@@ -35,6 +45,7 @@ const App = ()=>{
         <Cv personal={personalData} work={workExp} education={edu} />
       </div>
 
+    </div>
     </div>
   )
 }

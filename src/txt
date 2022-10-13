@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200&family=Secular+One&display=swap');
+
+h1{
+    color: #195c70;
+}
+
+h3{
+    color: #377ea4;
+}
+
+.personal > p, .workExp > p{
+    color: #ec4e36;
+}
