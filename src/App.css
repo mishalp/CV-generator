@@ -1,5 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200&family=Open+Sans&family=Secular+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Kanit&family=Nunito:wght@200&family=Open+Sans&family=Secular+One&display=swap');
+
 
 *{
     margin: 0;
@@ -31,9 +32,9 @@
 }
 
 p{
-    font-family: 'Nunito', sans-serif;
-    font-family: 'Open Sans', sans-serif;
-    font-family: 'Secular One', sans-serif;
+ 
+    font-family:'Karla', sans-serif;
+    
 }
 
 body{
